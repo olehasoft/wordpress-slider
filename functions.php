@@ -29,3 +29,8 @@ if ( ! function_exists( 'mytheme_scripts' ) ){
         ));
     }
 }
+
+/**
+ * Includes slider functionality.
+ */
+require __DIR__ . '/includes/slider.php';
