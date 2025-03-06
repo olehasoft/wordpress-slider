@@ -82,8 +82,16 @@ if ( ! function_exists( 'slider_gallery' ) ) {
                 <?php } ?>
             </div>
             <div class="swiper-pagination"></div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next">
+                <svg width="24" height="25" viewBox="0 0 24 25" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.59 8.09383L13.17 12.6738L8.59 17.2638L10 18.6738L16 12.6738L10 6.67383L8.59 8.09383Z" fill="#222222"/>
+                </svg>
+            </div>
+            <div class="swiper-button-prev">
+                <svg width="24" height="25" viewBox="0 0 24 25" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.41 17.2538L10.83 12.6738L15.41 8.08383L14 6.67383L8 12.6738L14 18.6738L15.41 17.2538Z" fill="#222222"/>
+                </svg>
+            </div>
         </div>
     <?php
     }

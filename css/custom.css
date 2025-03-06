@@ -1,6 +1,5 @@
 .swiper-slider-gallery {
-    margin-left: -16px;
-    margin-right: -16px;
+    margin: 0 -16px;
 }
 .swiper-slider-gallery .swiper-slide {
     aspect-ratio: 240 / 300;
@@ -24,6 +23,12 @@
 .swiper-slider-gallery .swiper-slide>span {
     position: relative;
     margin: 0 1em;
+}
+.swiper-slider-gallery .swiper-button-next {
+    right: 0;
+}
+.swiper-slider-gallery .swiper-button-prev {
+    left: 0;
 }
 
 .slider-popup-description {
@@ -49,8 +54,8 @@
 
 @media screen and (min-width: 768px) {
     .swiper-slider-gallery {
-        margin-left: auto;
-        margin-right: auto;
+        margin: 0 -26px;
+        padding: 0 26px;
     }
     .swiper-slider-gallery .swiper-slide {
         aspect-ratio: 300 / 370;
@@ -59,5 +64,12 @@
     .slider-popup-description {
         padding: 42px;
         max-width: calc(100vw - 64px);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .swiper-slider-gallery {
+        margin: 0 -36px;
+        padding: 0 36px;
     }
 }

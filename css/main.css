@@ -2653,14 +2653,10 @@ a.btn.cart.active {
 }
 
 .swiper-button-next {
-  -webkit-transform: translateY(-50%) scaleX(-1);
-      -ms-transform: translateY(-50%) scaleX(-1);
-          transform: translateY(-50%) scaleX(-1);
   right: -36px;
 }
-
 .swiper-button-prev {
-  left: -32px;
+  left: -36px;
 }
 
 .swiper-button-prev.swiper-button-disabled,
