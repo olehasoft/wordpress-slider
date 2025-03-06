@@ -26,4 +26,8 @@ jQuery(document).ready(function ($) {
         },
     });
 
+    $('.slider-popup-ajax').magnificPopup({
+		type: 'ajax',
+	});
+
 });

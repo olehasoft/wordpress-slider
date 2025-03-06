@@ -64,14 +64,16 @@ if ( ! function_exists( 'slider_gallery' ) ) {
         $posts = get_posts( $args );
 
         if ( empty( $posts ) ) return;
+
+        $ajax_url = admin_url( 'admin-ajax.php' ) . '?action=slider-description&id=';
     ?>
         <div class="swiper swiper-slider-gallery">
             <div class="swiper-wrapper">
                 <?php foreach ( $posts as $post ) { ?>
-                    <div class="swiper-slide">
+                    <a class="swiper-slide slider-popup-ajax" href="<?php echo $ajax_url . $post->ID ?>">
                         <?php echo get_the_post_thumbnail( $post->ID, 'medium' ) ?>
                         <span><?php echo get_the_title( $post ) ?></span>
-                    </div>
+                    </a>
                 <?php } ?>
             </div>
             <div class="swiper-pagination"></div>
@@ -79,5 +81,32 @@ if ( ! function_exists( 'slider_gallery' ) ) {
             <div class="swiper-button-prev"></div>
         </div>
     <?php
+    }
+}
+
+add_action( 'wp_ajax_slider-description', 'slider_description_handler' );
+add_action( 'wp_ajax_nopriv_slider-description', 'slider_description_handler' );
+
+if ( ! function_exists( 'slider_description_handler' ) ) {
+    /**
+     * Slider description ajax handler.
+     */
+    function slider_description_handler() {
+        $content = '';
+
+        if ( isset( $_GET['id'] ) && is_numeric( $_GET['id'] ) ) {
+            $post = get_post( $_GET['id'] );
+
+            if ( $post->post_type === 'slider' ) {
+                $content = $post->post_excerpt;
+            }
+        }
+    ?>
+        <div class="slider-popup-description">
+            <div class="header"><?php _e( 'Description' ) ?></div>
+            <div class="content"><?php echo $content ?></div>
+        </div>
+    <?php
+        wp_die();
     }
 }
