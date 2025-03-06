@@ -46,3 +46,38 @@ add_action( 'add_meta_boxes', function( $post_type ) {
         }, null, 'normal', 'high' );
     }
 } );
+
+if ( ! function_exists( 'slider_gallery' ) ) {
+    /**
+     * Slider gallery block.
+     */
+    function slider_gallery() {
+        $args = [
+            'posts_per_page'    => 10,
+            'post_type'         => 'slider',
+            'meta_query'        => [
+                'key'           => '_thumbnail_id',
+                'compare'       => 'EXISTS',
+            ],
+        ];
+
+        $posts = get_posts( $args );
+
+        if ( empty( $posts ) ) return;
+    ?>
+        <div class="swiper swiper-slider-gallery">
+            <div class="swiper-wrapper">
+                <?php foreach ( $posts as $post ) { ?>
+                    <div class="swiper-slide">
+                        <?php echo get_the_post_thumbnail( $post->ID, 'medium' ) ?>
+                        <span><?php echo get_the_title( $post ) ?></span>
+                    </div>
+                <?php } ?>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    <?php
+    }
+}

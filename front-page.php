@@ -3,7 +3,7 @@
 
     <section class="container ">
 
-<!--        New Block-->
+        <?php function_exists( 'slider_gallery' ) && slider_gallery() ?>
 
     </section>
 
