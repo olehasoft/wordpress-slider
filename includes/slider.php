@@ -23,6 +23,7 @@ add_action( 'init', function() {
         ],
         'supports' => [
             'title',
+            'excerpt',
             'thumbnail',
         ],
         'public'        => false,
@@ -44,6 +45,10 @@ add_action( 'add_meta_boxes', function( $post_type ) {
                 </label><textarea rows="1" cols="40" name="excerpt" id="excerpt"><?php echo $post->post_excerpt ?></textarea>
             <?php
         }, null, 'normal', 'high' );
+        /**
+         * Add custom "thumbnail" meta box as "image".
+         */
+        add_meta_box( 'postimagediv', __( 'Image' ), 'post_thumbnail_meta_box', null, 'normal', 'high' );
     }
 } );
 
