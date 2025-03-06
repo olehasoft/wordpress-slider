@@ -97,7 +97,7 @@ if ( ! function_exists( 'slider_description_handler' ) ) {
         if ( isset( $_GET['id'] ) && is_numeric( $_GET['id'] ) ) {
             $post = get_post( $_GET['id'] );
 
-            if ( $post->post_type === 'slider' ) {
+            if ( $post && $post->post_type === 'slider' ) {
                 $content = $post->post_excerpt;
             }
         }
