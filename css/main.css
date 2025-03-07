@@ -2653,10 +2653,14 @@ a.btn.cart.active {
 }
 
 .swiper-button-next {
+  -webkit-transform: translateY(-50%) scaleX(-1);
+      -ms-transform: translateY(-50%) scaleX(-1);
+          transform: translateY(-50%) scaleX(-1);
   right: -36px;
 }
+
 .swiper-button-prev {
-  left: -36px;
+  left: -32px;
 }
 
 .swiper-button-prev.swiper-button-disabled,
@@ -3204,6 +3208,18 @@ a.btn.cart.active {
 .mfp-content button.btn {
   width: 100%;
   max-width: unset;
+}
+.mfp-content .mfp-close {
+  width: 24px;
+  height: 24px;
+  font-size: 0;
+  background-image: url("../img/icon/close.svg");
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 1;
+  top: 16px;
+  right: 16px;
 }
 
 .form {
@@ -5483,6 +5499,9 @@ a.btn {
         -ms-flex-align: center;
             align-items: center;
     gap: 8px;
+  }
+  .mfp-content .mfp-close {
+    top: 24px;
   }
   .form__wrap {
     padding: 55px 16px 24px;
