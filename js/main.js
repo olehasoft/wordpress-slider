@@ -28,6 +28,8 @@ jQuery(document).ready(function ($) {
 
     $('.slider-popup-ajax').magnificPopup({
 		type: 'ajax',
+        fixedBgPos: true,
+        fixedContentPos: true,
 	});
 
 });

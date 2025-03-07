@@ -1,13 +1,14 @@
 .swiper-slider-gallery {
-    margin: 0 -16px;
+    margin: 0 -36px;
+    padding: 0 36px;
 }
 .swiper-slider-gallery .swiper-slide {
-    aspect-ratio: 240 / 300;
+    aspect-ratio: 300 / 370;
     max-width: 64vw;
     color: white;
     text-align: center;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 24px;
     line-height: 27px;
     text-transform: uppercase;
     display: flex;
@@ -33,8 +34,8 @@
 
 .slider-popup-description {
     text-align: center;
-    padding: 16px;
-    max-width: calc(100vw - 36px);
+    padding: 42px;
+    max-width: calc(100vw - 64px);
 }
 .slider-popup-description .header {
     font-weight: 700;
@@ -50,26 +51,34 @@
     font-size: 18px;
     line-height: 27px;
     max-width: 800px;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+.slider-popup-description .mfp-close {
+    background-size: 24px 24px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
+    .swiper-slider-gallery {
+        margin: 0 -16px;
+        padding: 0;
+    }
+    .swiper-slider-gallery .swiper-slide {
+        aspect-ratio: 240 / 300;
+        font-size: 20px;
+    }
+    .slider-popup-description {
+        padding: 48px 18px;
+        max-width: calc(100vw - 36px);
+    }
+    .slider-popup-description .mfp-close {
+        right: calc(50% - 12px);
+        top: 16px;
+    }
+}
+@media screen and (max-width: 1024px) {
     .swiper-slider-gallery {
         margin: 0 -26px;
         padding: 0 26px;
-    }
-    .swiper-slider-gallery .swiper-slide {
-        aspect-ratio: 300 / 370;
-        font-size: 24px;
-    }
-    .slider-popup-description {
-        padding: 42px;
-        max-width: calc(100vw - 64px);
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    .swiper-slider-gallery {
-        margin: 0 -36px;
-        padding: 0 36px;
     }
 }
